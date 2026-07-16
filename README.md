@@ -24,37 +24,37 @@
 
 ## Команды:
 
-/duel NikName
+/duel NikName  
 Открывает GUI меню с выбором кита для дуэли и отправляет запрос на дуэль
 
-/duel spectate
+/duel spectate  
 Открывает GUI меню с выбором текущих дуэлей для наблюдения
 
-/duel accept/deny
+/duel accept/deny  
 Принимает или откланяет запрос на дуэль
 
-/duel leave
+/duel leave  
 Выход с дуэли, или с режима наблюдения за дуэлью
 
-/duel admin reload
+/duel admin reload  
 Перезагружает конфиги плагина (Не пересоздает, для пересоздания перезагрузите сервер)
 
-/duel admin createkit KitName
+/duel admin createkit KitName  
 Создает кит с названием KitName из предметов вашего инвентаря, сохраняет в папку плагина, если кит существует, перезаписывает его
 
-/duel admin editkit KitName
+/duel admin editkit KitName  
 Выдает вам сохраненный кит, только выдает, для сохранения пропишите /duel admin createkit KitName
 
-/duel admin removekit KitName
+/duel admin removekit KitName  
 Удаляет кит из папки плагина
 
-/duel admin createarena ArenaName
+/duel admin createarena ArenaName  
 Создает темплейт арены в плагине, потом ее можно изменять, арена создается в мире Multiverse, который прописан в config.yml
 
-/duel admin deletearena ArenaName
+/duel admin deletearena ArenaName  
 Удаляет арену из плагина
 
-/duel admin setspawn ArenaName 1/2
+/duel admin setspawn ArenaName 1/2  
 Задает спавн игроков на арене
 
 /duel admin setspectatorspawn ArenaName
