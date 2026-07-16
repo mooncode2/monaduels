@@ -1,32 +1,62 @@
 # MonaDuels
 
-Decompiled and reconstructed Gradle source for the **MonaDuels** Paper plugin (MC 1.21.11).
 
-## Build
+Это - плагин для minecraft java который добавляет дуэли между игроками и пати на ваш сервер!
 
-```bash
-./gradlew build       # Linux/macOS
-gradlew.bat build     # Windows
-```
+Функции:
 
-The compiled plugin jar is written to `build/libs/MonaDuels-1.0-SNAPSHOT.jar`.
+Удобное создание китов
 
-## Requirements
+Удобное добавление арен 
 
-- JDK 21
-- Paper API `1.21.11-R0.1-SNAPSHOT` (fetched automatically from the PaperMC Maven repo)
+Пулл арен
 
-## Layout
+Редактирование раскладки китов для игроков
 
-- `src/main/java` — plugin sources (package `org.Mona.monaDuels`)
-- `src/main/resources` — `plugin.yml`, config/message YAMLs, kit and menu definitions
+Изменение шаблонов для брони только донаетерам
 
-## Notes
+Поддержка & цветов
 
-- Sources were recovered by decompilation (Vineflower). A handful of decompiler
-  artifacts were hand-fixed to compile cleanly: raw-generic restoration in
-  `ArenaManager`, a switch-case variable rename in `MduelCommand`, and raw-type
-  casts for reflective `Enum.valueOf` calls in `MultiverseInventoriesHook`.
-- The Multiverse-Core / Multiverse-Inventories integration is soft-dependent and
-  accessed entirely by reflection, so no Multiverse artifact is needed to build.
-- `plugin.yml`'s `version` is populated from the Gradle project version at build time.
+Празднования победы
+
+И многое другое
+
+
+Команды:
+
+/duel NikName
+Открывает GUI меню с выбором кита для дуэли и отправляет запрос на дуэль
+
+/duel spectate
+Открывает GUI меню с выбором текущих дуэлей для наблюдения
+
+/duel accept/deny
+Принимает или откланяет запрос на дуэль
+
+/duel leave
+Выход с дуэли, или с режима наблюдения за дуэлью
+
+/duel admin reload
+Перезагружает конфиги плагина (Не пересоздает, для пересоздания перезагрузите сервер)
+
+/duel admin createkit KitName
+Создает кит с названием KitName из предметов вашего инвентаря, сохраняет в папку плагина, если кит существует, перезаписывает его
+
+/duel admin editkit KitName
+Выдает вам сохраненный кит, только выдает, для сохранения пропишите /duel admin createkit KitName
+
+/duel admin removekit KitName
+Удаляет кит из папки плагина
+
+/duel admin createarena ArenaName
+Создает темплейт арены в плагине, потом ее можно изменять, арена создается в мире Multiverse, который прописан в config.yml
+
+/duel admin deletearena ArenaName
+Удаляет арену из плагина
+
+/duel admin setspawn ArenaName 1/2
+Задает спавн игроков на арене
+
+/duel admin setspectatorspawn ArenaName
+Задет спавн наблюдателей на арене
+
