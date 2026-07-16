@@ -211,8 +211,8 @@ https://github.com/mooncode2/monaduels/blob/master/MyOwnConfigs.md
 
 Задет спавн наблюдателей на арене
 
-</details>
-
 Мои собственные конфиги:
 
 https://github.com/mooncode2/monaduels/blob/master/MyOwnConfigs.md
+</details>
+
