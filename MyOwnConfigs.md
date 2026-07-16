@@ -1167,3 +1167,198 @@ icon:
 
 
 </details>
+
+**Menus:**  
+
+<details>
+<summary>kits-menu.yml</summary>
+
+
+```
+id: kits-menu
+title: "&8Выбор режима"
+size: 27
+
+items:
+  official-title:
+    material: diamond_sword
+    slot: 3
+    displayname: "&r&a&lОфициальные киты"
+    lore:
+      - "&r&7Официальные киты от MCPVP"
+  unofficial-title:
+    material: FIREWORK_ROCKET
+    slot: 5
+    displayname: "&r&6&lНеофициальные киты"
+    lore:
+      - "&7Фановые режимы"
+    action: "[menu] unoffkit"
+    
+  axe:
+    material: minecraft:diamond_axe
+    slot: 11
+    displayname: "&r&a&lКит топора"
+    lore:
+      - "&f"
+      - "&eПКМ &8- &6начать вызов"
+      - "&eПКМ &8- &6предпросмотр набора"
+      
+  pane:
+    material: white_stained_glass_pane
+    slot: 0,1,2,4,6,7,8,9,18,19,20,21,22,23,24,25,17,26
+    displayname: ""
+
+  sword:
+    material: diamond_sword
+    slot: 10
+    enchantment-glint: true
+    displayname: "&r&a&lКит меча"
+    lore:
+      - "&f"
+      - "&eПКМ &8- &6начать вызов"
+      - "&eПКМ &8- &6предпросмотр набора"
+
+  mace:
+    material: MACE
+    slot: 15
+    displayname: "&r&a&lКит булава"
+    lore:
+      - "&f"
+      - "&eПКМ &8- &6начать вызов"
+      - "&eПКМ &8- &6предпросмотр набора"
+   
+  spearelytra:
+    material: netherite_spear
+    slot: 13
+    displayname: "&r&a&lКит копья"
+    lore:
+      - "&f"
+      - "&eПКМ &8- &6начать вызов"
+      - "&eПКМ &8- &6предпросмотр набора"
+  
+  spearmace:
+    material: golden_spear
+    slot: 14
+    displayname: "&r&a&lКит булава + копье"
+    lore:
+      - "&7Оффициальный кит булава + копье"
+  crystal:
+    material: end_crystal
+    slot: 16
+    displayname: "&r&a&lКит кристаллы"
+    lore:
+      - "&f"
+      - "&eПКМ &8- &6начать вызов"
+      - "&eПКМ &8- &6предпросмотр набора"
+      
+  netheritepot:
+    material: netherite_sword
+    slot: 12
+    displayname: "&r&a&lКит незерпот"
+    lore:
+      - "&f"
+      - "&eПКМ &8- &6начать вызов"
+      - "&eПКМ &8- &6предпросмотр набора"
+  # axe,sword,mace
+  
+
+
+
+  close:
+    material: BARRIER
+    slot: 54
+    displayname: "&cЗакрыть"
+    lore:
+      - "&7Отменить выбор"
+    action: "[close]"
+```
+
+
+</details>
+
+**Lobby:** 
+
+<details>
+<summary>lobby-layout.yml</summary>
+
+
+```
+enabled: true
+
+worlds:
+  - lobbyduel
+
+items:
+  casual-duel:
+    slot: 0
+    material: IRON_SWORD
+    display-name: "&7Обычный матч"
+    lore:
+      - "&7Выберите игрока и кит"
+      - "&eПКМ — начать вызов"
+    hide-flags: true
+    action: casual
+
+  rated-duel:
+    slot: 1
+    material: DIAMOND_SWORD
+    display-name: "&bРейтинговый матч"
+    lore:
+      - "&7Дуэль с учётом ELO"
+      - "&eПКМ — начать вызов"
+    hide-flags: true
+    action: rated
+
+  last-kit:
+    slot: 2
+    dynamic-last-kit: true
+    material: IRON_SWORD
+    display-name: "&f{last_kit_display}"
+    lore:
+      - "&7Последний кит: &f{last_kit_display}"
+      - "&eПКМ — вызов с этим китом"
+    empty-display-name: "&7Меч / &8нет истории"
+    empty-lore:
+      - "&7Сыграйте дуэль, чтобы"
+      - "&7сохранить последний кит"
+    hide-flags: true
+    action: last-kit
+
+  stats:
+    slot: 4
+    material: PLAYER_HEAD
+    own-head: true
+    display-name: "&eСтатистика"
+    lore:
+      - "&7Ваши победы, поражения"
+      - "&7и ELO по китам"
+      - "&eПКМ — открыть"
+    hide-flags: true
+    action: stats
+
+  party:
+    slot: 6
+    material: WRITABLE_BOOK
+    display-name: "&dПати / Комнаты"
+    lore:
+      - "&7Система комнат"
+      - "&8(в разработке)"
+    hide-flags: true
+    action: party
+
+  celebration:
+    slot: 7
+    material: SPLASH_POTION
+    potion-type: strong_harming
+    enchantment-glint: true
+    display-name: "&5Празднование"
+    lore:
+      - "&7Эффект убийства"
+      - "&8(в разработке)"
+    hide-flags: true
+    action: celebration
+
+```
+
+
+</details>
