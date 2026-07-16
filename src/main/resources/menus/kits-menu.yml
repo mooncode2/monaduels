@@ -1,0 +1,30 @@
+id: kits-menu
+title: "&8Выбор кита"
+size: 27
+
+items:
+  nethpot:
+    material: NETHERITE_SWORD
+    slot: 11
+    displayname: "&cNetherite Pot"
+    lore:
+      - "&7Классический PvP"
+      - ""
+      - "&eНажмите для выбора"
+    action: "[kit] nethpot"
+  diamond:
+    material: DIAMOND_SWORD
+    slot: 13
+    displayname: "&bDiamond Kit"
+    lore:
+      - "&7Стандартный набор"
+      - ""
+      - "&eНажмите для выбора"
+    action: "[kit] diamond"
+  close:
+    material: BARRIER
+    slot: 22
+    displayname: "&cЗакрыть"
+    lore:
+      - "&7Отменить выбор"
+    action: "[close]"

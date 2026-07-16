@@ -1,0 +1,174 @@
+prefix: "&8[&cДуэли&8] &r"
+
+general:
+  no-permission: "{prefix}&cУ вас нет прав."
+  player-only: "{prefix}&cТолько для игроков."
+  player-not-found: "{prefix}&cИгрок &f{player} &cне найден."
+  player-offline: "{prefix}&cИгрок &f{player} &cне в сети."
+  cannot-duel-self: "{prefix}&cНельзя вызвать себя на дуэль."
+  reload-success: "{prefix}&aКонфигурация перезагружена."
+  invalid-usage: "{prefix}&cИспользование: &f{usage}"
+
+cooldown:
+  active: "{prefix}&cПодождите &f{seconds} &cсек. перед повтором."
+
+duel-world:
+  not-loaded: "{prefix}&cМир дуэлей &f{world} &cне загружен. Загрузите мир через Multiverse-Core."
+
+request:
+  sent: "{prefix}&aЗапрос отправлен игроку &f{target}&a. Кит: &f{kit}"
+  received: "{prefix}&f{challenger} &7вызывает вас на дуэль! Кит: &f{kit}"
+  received-hint: "{prefix}&7Принять: &f/mduel accept &7| Отклонить: &f/mduel deny"
+  interactive:
+    header: "&6&lЗапрос на Дуэль"
+    sender: "&7От &f{challenger} &7({challenger_ping} &7мс)"
+    kit: "&7Набор: &f{kit}"
+    accept-button: "&a&l(ПРИНЯТЬ)"
+    deny-button: "&c&l(ОТКЛОНИТЬ)"
+    buttons-separator: "&7 или "
+    accept-hover: "&aНажмите, чтобы принять"
+    deny-hover: "&cНажмите, чтобы отклонить"
+  accepted-challenger: "{prefix}&a{target} принял вызов! Подготовка..."
+  accepted-target: "{prefix}&aВы приняли вызов от &f{challenger}&a!"
+  denied-challenger: "{prefix}&c{target} отклонил ваш вызов."
+  denied-target: "{prefix}&7Вы отклонили вызов от &f{challenger}&7."
+  expired-challenger: "{prefix}&cЗапрос к &f{target} &cистёк."
+  expired-target: "{prefix}&7Запрос от &f{challenger} &7истёк."
+  no-pending: "{prefix}&cУ вас нет активных запросов."
+  already-pending: "{prefix}&cУ вас уже есть активный запрос."
+  target-busy: "{prefix}&cИгрок &f{target} &cзанят."
+  challenger-busy: "{prefix}&cВы уже в дуэли или ожидаете ответа."
+  match-type:
+    casual: "&7Обычный"
+    rated: "&bРейтинговый"
+
+arena:
+  none-free: "{prefix}&cНет свободных арен. Попробуйте позже."
+  none-free-pool: "{prefix}&cНет свободных арен для кита &f{kit}&c. Проверьте map-pools.yml."
+  not-found: "{prefix}&cАрена &f{arena} &cне найдена."
+  created: "{prefix}&aАрена &f{arena} &aсоздана."
+  deleted: "{prefix}&aАрена &f{arena} &aудалена."
+  spawn-set: "{prefix}&aСпавн &f{spawn} &aарены &f{arena} &aустановлен."
+  spectator-spawn-set: "{prefix}&aСпавн наблюдателей арены &f{arena} &aустановлен."
+
+kit:
+  not-found: "{prefix}&cКит &f{kit} &cне найден."
+  created: "{prefix}&aКит &f{kit} &aсоздан."
+  removed: "{prefix}&aКит &f{kit} &aудалён."
+  menu-not-found: "{prefix}&cМеню китов не найдено."
+  buff-added: "{prefix}&aБафф добавлен в кит &f{kit}&a: &f{buff} {level}"
+
+lobby:
+  set: "{prefix}&aЛобби дуэлей установлено."
+  not-set: "{prefix}&cЛобби не настроено. Админ: &f/mduel admin setlobby"
+  no-last-kit: "{prefix}&cСначала сыграйте дуэль — последний кит не сохранён."
+  unknown-action: "{prefix}&cДействие предмета лобби не настроено."
+
+party:
+  created: "{prefix}&aПати создана. Пригласите игрока через меню или &f/mduel party invite <ник>"
+  disbanded: "{prefix}&7Пати распущена."
+  left: "{prefix}&7Вы покинули пати."
+  not-in-party: "{prefix}&cВы не в пати."
+  already-in-party: "{prefix}&cВы уже в пати."
+  not-leader: "{prefix}&cТолько лидер пати может это сделать."
+  full: "{prefix}&cВ пати максимум &f{size} &cигроков."
+  full-join: "{prefix}&cПати уже полная."
+  not-ready: "{prefix}&cНужна полная пати (2 игрока) для пати-дуэли."
+  invite-sent: "{prefix}&aПриглашение отправлено &f{target}&a."
+  invite-received: "{prefix}&f{leader} &7приглашает вас в пати (&f{size}/{max}&7). &a/mduel party accept"
+  invite-denied: "{prefix}&7Вы отклонили приглашение."
+  invite-denied-by: "{prefix}&c{player} отклонил приглашение."
+  no-invite: "{prefix}&cНет активного приглашения."
+  target-in-party: "{prefix}&c{target} уже в пати."
+  target-has-invite: "{prefix}&cУ {target} уже есть приглашение."
+  joined: "{prefix}&aВы вступили в пати!"
+  member-joined: "{prefix}&a{player} &7вступил в пати."
+  member-left: "{prefix}&7{player} покинул пати."
+  leader-promoted: "{prefix}&eВы стали лидером пати."
+  request:
+    sent: "{prefix}&aВызов пати отправлен &f{target}&a. Кит: &f{kit}"
+    received: "{prefix}&f{challenger} &7вызывает вашу пати! Кит: &f{kit}"
+    hint: "{prefix}&7Принять: &f/mduel accept &7| Отклонить: &f/mduel deny"
+    none: "{prefix}&cНет входящего вызова пати."
+    target-busy: "{prefix}&cУ &f{target} &cуже есть вызов."
+    accepted-challenger: "{prefix}&a{target} принял пати-дуэль!"
+    accepted-target: "{prefix}&aВы приняли пати-дуэль от &f{challenger}&a!"
+    denied-challenger: "{prefix}&c{target} отклонил пати-дуэль."
+    denied-target: "{prefix}&7Вы отклонили пати-дуэль."
+  duel:
+    started: "{prefix}&aПати-дуэль началась! Арена: &f{arena} &7| Кит: &f{kit}"
+    win: "{prefix}&aВаша пати победила! (&f{winners}&a)"
+    lose: "{prefix}&cВаша пати проиграла. Победили: &f{winners}"
+
+celebration:
+  selected: "{prefix}&aЭффект убийства: &f{celebration}"
+  locked: "{prefix}&cЭффект &f{celebration} &cдоступен только особой группе."
+  no-access: "{prefix}&cПразднования доступны только группе &fmonaprime&c."
+  applied-all: "{prefix}&aЭффект &f{celebration} &aприменён ко всем наборам."
+
+trims:
+  locked: "{prefix}&cШаблоны брони доступны только группе &fmonaprime&c."
+  disabled: "{prefix}&cШаблоны брони отключены."
+  incomplete: "{prefix}&cВыберите паттерн И материал, затем сохраните."
+  saved: "{prefix}&aШаблон брони сохранён для набора &f{kit}&a."
+  removed: "{prefix}&7Шаблон брони набора &f{kit} &7удалён."
+  applied-all: "{prefix}&aШаблон брони применён ко всем наборам."
+
+queue:
+  joined: "{prefix}&aПоиск соперника на ките &f{kit}&a..."
+  match-found: "{prefix}&aСоперник найден: &f{opponent}&a!"
+  play-again-pending: "{prefix}&aВы встанете в очередь сразу после возвращения в лобби."
+  left: "{prefix}&cВы покинули очередь."
+
+kit-editor:
+  opened: "{prefix}&aРедактирование раскладки: &f{kit}&a. Перетаскивайте предметы, F — во вторую руку. &2Черепаший шлем&a — сохранить."
+  saved: "{prefix}&aРаскладка набора &f{kit} &aсохранена."
+  reset: "{prefix}&eРаскладка набора &f{kit} &eсброшена к значениям по умолчанию."
+  cancelled: "{prefix}&7Изменения раскладки отменены."
+  busy: "{prefix}&cСейчас нельзя редактировать раскладку."
+
+countdown:
+  tick: "{prefix}&eДуэль через &f{seconds} &eсек..."
+  start: "{prefix}&a&lДУЭЛЬ! &7Удачи!"
+
+duel:
+  started: "{prefix}&aДуэль началась на арене &f{arena}&a!"
+  result: "{prefix}&f{winner} &aпобедил &f{loser} &aв дуэли на ките &f{kit}&a!"
+  win: "{prefix}&aВы победили в дуэли против &f{loser}&a!"
+  lose: "{prefix}&cВы проиграли дуэль против &f{winner}&c."
+  opponent-win: "{prefix}&a{winner} победил! {loser} проиграл."
+  leave: "{prefix}&7Вы покинули дуэль."
+  opponent-left: "{prefix}&c{loser} покинул дуэль. Вы победили!"
+  opponent-logout: "{prefix}&c{player} вышел с сервера. Вы победили!"
+  forfeit-logout: "{prefix}&cВы вышли во время дуэли — поражение."
+  already-in-duel: "{prefix}&cВы уже в дуэли."
+  not-in-duel: "{prefix}&cВы не в дуэли."
+  escape-blocked: "{prefix}&cНельзя покидать арену во время дуэли."
+  pearl-barrier-blocked: "{prefix}&cЭндер-перл ударился о барьер арены и исчез."
+
+protection:
+  command-blocked: "{prefix}&cКоманды запрещены во время дуэли."
+  drop-blocked: "{prefix}&cНельзя выбрасывать предметы во время дуэли."
+  teleport-blocked: "{prefix}&cТелепортация запрещена во время дуэли."
+
+results:
+  not-found: "{prefix}&cРезультаты матча не найдены."
+  gui-disabled: "{prefix}&cМеню результатов отключено."
+  chat:
+    header: "&e&lРезультаты матча &7(Нажми что бы увидеть)"
+    summary: "&7Победил(а): &a{winner} &7| Проиграл(а) &c{loser}"
+
+stats:
+  self: "{prefix}&7Статистика: &a{wins} &7побед, &c{losses} &7поражений, время: &f{time}"
+  kit-line: "{prefix}&7Кит &f{kit}&7: ELO &e{elo}"
+
+spectate:
+  not-found: "{prefix}&cДуэль не найдена или уже завершена."
+  no-spawn: "{prefix}&cНа арене &f{arena} &cне настроен спавн наблюдателей."
+  not-spectating: "{prefix}&cВы не наблюдаете за дуэлью."
+  joined: "{prefix}&aВы наблюдаете за дуэлью &f{player1} &7vs &f{player2}&a."
+  left: "{prefix}&7Вы вышли из режима наблюдения."
+  duel-ended: "{prefix}&7Дуэль окончена."
+
+admin:
+  usage: "{prefix}&7Админ: createkit, editkit, removekit, setspawn, setspectatorspawn, createarena, deletearena, setlobby, reload"

@@ -1,0 +1,5 @@
+name: diamond
+display-name: "&bDiamond Kit"
+icon:
+  material: DIAMOND_SWORD
+  slot: 13

@@ -1,0 +1,8 @@
+name: nethpot
+display-name: "&cNetherite Pot"
+icon:
+  material: NETHERITE_SWORD
+  slot: 11
+inventory: []
+armor: []
+effects: []

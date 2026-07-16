@@ -1,0 +1,56 @@
+name: MonaDuels
+version: '${version}'
+main: org.Mona.monaDuels.MonaDuels
+api-version: '1.21'
+authors: [Mona]
+description: Production-ready duels plugin for survival/hub servers
+softdepend:
+  - Multiverse-Core
+  - Multiverse-Inventories
+commands:
+  mduel:
+    description: Main duels command
+    usage: /mduel <player> | accept | deny | leave | admin ...
+    aliases: [duel, monaduel]
+permissions:
+  monaduels.use:
+    description: Use duel commands
+    default: true
+  monaduels.admin:
+    description: Admin duel commands
+    default: op
+  monaduels.bypass.cooldown:
+    description: Bypass duel cooldowns
+    default: op
+  monaduels.bypass.commandblock:
+    description: Use commands during duels
+    default: op
+  monaduels.spectate:
+    description: Spectate active duels
+    default: true
+  monaduels.trims:
+    description: Customize armor trims on kits (also granted via group.monaprime)
+    default: op
+  monaduels.celebrations:
+    description: Choose kill celebrations (also granted via group.monaprime)
+    default: op
+  monaduels.killeffect.*:
+    description: Access to all premium kill effects
+    default: op
+    children:
+      monaduels.killeffect.lightning: true
+      monaduels.killeffect.fireworks: true
+      monaduels.killeffect.soul_flame: true
+      monaduels.killeffect.triumph: true
+  monaduels.killeffect.lightning:
+    description: Use the lightning kill effect
+    default: false
+  monaduels.killeffect.fireworks:
+    description: Use the fireworks kill effect
+    default: false
+  monaduels.killeffect.soul_flame:
+    description: Use the soul flame kill effect
+    default: false
+  monaduels.killeffect.triumph:
+    description: Use the triumph kill effect
+    default: false

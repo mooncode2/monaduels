@@ -1,0 +1,8 @@
+# Привязка арен к китам (только этот файл).
+# Имена арен — как в arenas.yml, киты — как в kits/*.yml (name).
+
+sword:
+  - nethertest
+
+mace:
+  - almazka

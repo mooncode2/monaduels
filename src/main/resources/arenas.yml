@@ -1,0 +1,24 @@
+# Arena definitions
+# occupied is managed at runtime — do not edit manually while server is online
+#
+# Set spawns: /mduel admin setspawn <arena> <1|2>
+# Set spectator spawn: /mduel admin setspectatorspawn <arena>
+# Create arena: /mduel admin createarena <name>
+
+arenas:
+  example:
+    name: example
+    world: duels
+    enabled: true
+    spawn1:
+      x: 0.5
+      y: 64.0
+      z: 0.5
+      yaw: 0.0
+      pitch: 0.0
+    spawn2:
+      x: 10.5
+      y: 64.0
+      z: 0.5
+      yaw: 180.0
+      pitch: 0.0

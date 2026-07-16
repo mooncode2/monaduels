@@ -1,0 +1,63 @@
+# Дуэльный хотбар (режим после ПКМ по удочке-активатору).
+# По умолчанию в лобби у игрока ТОЛЬКО удочка (config.yml: lobby-item-*, слот 5 по центру).
+# ПКМ по удочке -> хотбар заменяется предметами ниже (toggle). Предмет с action: back возвращает удочку.
+# Слоты 0-8 = игровые 1-9. 9-й слот (индекс 8) всегда свободен — навигатор другого плагина.
+
+enabled: true
+
+worlds:
+  - lobby
+
+items:
+  find-duel:
+    slot: 0
+    material: IRON_SWORD
+    display-name: "&c&lНайти игру"
+    lore:
+      - "&7Выберите набор — и в очередь!"
+      - "&eПКМ — открыть меню наборов"
+    hide-flags: true
+    action: matchmaking
+
+  stats:
+    slot: 2
+    material: PLAYER_HEAD
+    own-head: true
+    display-name: "&eСтатистика"
+    lore:
+      - "&7Ваши победы, поражения"
+      - "&7и ELO по китам"
+      - "&eПКМ — открыть"
+    hide-flags: true
+    action: stats
+
+  party:
+    slot: 4
+    material: WRITABLE_BOOK
+    display-name: "&dПати / Комнаты"
+    lore:
+      - "&7Пати-дуэли 2 на 2"
+      - "&eПКМ — меню пати"
+    hide-flags: true
+    action: party
+
+  settings:
+    slot: 6
+    material: COMPARATOR
+    display-name: "&bНастройки"
+    lore:
+      - "&7Боссбар, скорборд и другое"
+      - "&eПКМ — открыть настройки"
+    hide-flags: true
+    action: settings
+
+  back:
+    slot: 7
+    material: BARRIER
+    display-name: "&cНазад"
+    lore:
+      - "&7Свернуть дуэльный хотбар"
+    hide-flags: true
+    action: back
+
+  # Слот 9 (индекс 8) — навигатор, не задаём (skip)

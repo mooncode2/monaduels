@@ -1,0 +1,30 @@
+# Пример группы для Multiverse-Inventories (plugins/Multiverse-Inventories/groups.yml)
+# MonaDuels создаёт группу автоматически, если auto-create-group: true в config.yml.
+#
+# ВАЖНО: мир дуэлей (duel-world) НЕ должен быть в группе default/survival,
+# иначе инвентари перемешаются. Оставьте его только в группе monaduels.
+
+monaduels:
+  worlds:
+    - duels
+  shares:
+    - inventory
+    - armor
+    - ender_chest
+    - health
+    - hunger
+    - saturation
+    - experience
+    - potion_effects
+    - game_mode
+    - walk_speed
+    - fly_speed
+    - max_health
+    - fall_distance
+    - fire_ticks
+    - air
+    - level
+    - exp
+  # last_location НЕ включать — MonaDuels отключает его автоматически
+  disabled-shares:
+    - last_location

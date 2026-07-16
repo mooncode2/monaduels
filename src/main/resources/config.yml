@@ -1,0 +1,336 @@
+# MonaDuels — main configuration
+
+# Запросы (/mduel, accept, deny) работают из ЛЮБОГО мира.
+# duel-world — только мир арен (Multiverse-Core), игроки телепортируются туда при старте дуэли.
+
+# World where duel arenas live (Multiverse-Core world name)
+duel-world: duels
+
+# Multiverse-Inventories — отдельная группа инвентарей для дуэлей
+multiverse-inventories:
+  enabled: true
+  # Имя группы в groups.yml Multiverse-Inventories
+  group-name: monaduels
+  # Автоматически создать/обновить группу при старте и /mduel admin reload
+  auto-create-group: true
+  # Пауза между первым и вторым телепортом на спавн арены (тики)
+  arena-reteleport-delay-ticks: 10
+
+# Lobby spawn (set via /mduel admin setlobby) — игроки попадают сюда после дуэли
+lobby:
+  world: lobby
+  x: 0.5
+  y: 64.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+
+# Предмет-активатор дуэлей в лобби (хотбар). ПКМ — открыть меню выбора наборов (матчмейкинг).
+lobby-hotbar-enabled: true
+lobby-world: lobby
+lobby-item-slot: 5              # 1–9 (по центру хотбара)
+lobby-item-material: FISHING_ROD
+lobby-item-name: "&b&lДуэли"
+lobby-item-lore:
+  - "&7ПКМ — открыть меню наборов"
+
+# Пати-дуэли (2 на 2 на тех же аренах)
+party:
+  max-size: 2
+  spawn-teammate-offset: 1.0
+
+# Countdown before duel starts (seconds)
+countdown: 5
+
+# После убийства: победитель на арене, проигравший в спектаторе; затем телепорт обоих
+post-kill-delay-seconds: 5
+
+# Отображение во время дуэли (title, tab, scoreboard)
+display:
+  update-ticks: 4
+  # Когда матч найден (принят вызов, телепорт на арену)
+  match-found:
+    enabled: true
+    action-bar: "&8[&7D&8] &7Дуэль // &fНайдено: &e&l⚔ Матч найден ⚔"
+    title: "&e&l⚔ Матч найден ⚔"
+    subtitle: "&7Телепортация на арену..."
+    stay-seconds: 2
+    fade-in-ticks: 5
+    fade-out-ticks: 5
+  countdown:
+    chat: true
+    title:
+      enabled: true
+      tick: "&e&l{seconds}"
+      subtitle-tick: "&7Дуэль начнётся..."
+      start: "&a&lДУЭЛЬ!"
+      subtitle-start: "&7Удачи!"
+      fade-in-ticks: 5
+      stay-ticks: 25
+      fade-out-ticks: 5
+  nametag:
+    enabled: true
+    # Ник над головой в мире: PlayerName 20❤
+    format: " &c{hp}{hearts}"
+    hearts-symbol: "❤"
+    hp-decimals: 1
+  scoreboard:
+    enabled: true
+    title: "&c&lДУЭЛЬ"
+    lines:
+      - "&8&m──────────────"
+      - "&f{player1}: &c{player1_hp}: &f{player1_ping}"
+      - "&f{player2}: &c{player2_hp}: &f{player2_ping}"
+  bossbar:
+    enabled: true
+    format: "&f⚔ &f{opponent} &8| &e{kit} &8| {status}"
+    color: RED
+    status:
+      in-game: "&aВ игре"
+      preparing: "&eПодготовка"
+      spectating: "&bНаблюдение"
+  end-title:
+    enabled: true
+    win: "&6&lПОБЕДА!"
+    lose: "&c&lПОРАЖЕНИЕ"
+    win-subtitle: "&7Победитель: &fВы"
+    lose-subtitle: "&7Победитель: &f{opponent}"
+    fade-in-ticks: 5
+    stay-ticks: 60
+    fade-out-ticks: 20
+
+sounds:
+  enabled: true
+  countdown-tick: BLOCK_NOTE_BLOCK_PLING
+  countdown-tick-volume: 0.8
+  countdown-tick-pitch: 1.2
+  duel-start: ENTITY_PLAYER_LEVELUP
+  duel-start-volume: 1.0
+  duel-start-pitch: 1.0
+  victory: UI_TOAST_CHALLENGE_COMPLETE
+  victory-volume: 1.0
+  victory-pitch: 1.0
+  defeat: ENTITY_VILLAGER_NO
+  defeat-volume: 1.0
+  defeat-pitch: 0.8
+
+results:
+  chat:
+    enabled: true
+  gui:
+    enabled: true
+    title: "&8Результаты матча"
+
+request:
+  buttons:
+    enabled: true
+
+spectate:
+  menu-title: "&8Активные дуэли"
+  height-offset: 8.0
+
+stats:
+  default-elo: 1000
+  elo-k-factor: 32
+
+# Request timeout (seconds) — auto-deny if not accepted
+request-timeout: 60
+
+# Cooldowns (seconds)
+cooldowns:
+  challenge: 10
+  accept: 5
+  leave: 3
+
+# Commands allowed during an active duel (without bypass permission)
+allowed-commands-during-duel:
+  - mduel
+  - mduel leave
+  - duel
+  - duel leave
+
+# Protection
+protection:
+  block-item-drop: true
+  block-commands: true
+  block-teleport: true
+  block-ender-pearl: true
+  block-chorus-fruit: true
+  # Max distance from arena center before player is pulled back (0 = disabled)
+  max-escape-distance: 0
+  # Treat logout as forfeit (opponent wins)
+  logout-forfeit: true
+
+# Block tracking
+blocks:
+  track-placed: true
+  track-broken: true
+  restore-broken: true
+
+# Default kit menu id (from menus/)
+default-kit-menu: kits-menu
+
+# Очередь быстрого поиска (кнопка «Играть снова»)
+queue:
+  enabled: true
+  # Action Bar при постановке в очередь: показывает кит и число игроков в очереди на этот кит.
+  actionbar-enabled: true
+  actionbar-format: "&e⚔ &fНабор: &e{kit} &8| &b👥 &fВ очереди: &b{count}"
+
+# Предмет «Играть снова», выдаётся после матча.
+# ПКМ = снова в очередь на тот же кит (прошлый противник временно исключается).
+# slot 0-8 (хотбар). По умолчанию 3 — свободный слот, лобби-раскладка его не трогает.
+play-again:
+  enabled: true
+  # slot: устарело — предмет теперь выдаётся в активный (выбранный) слот хотбара.
+  slot: 3
+  material: PAPER
+  name: "&a&lИграть снова"
+  lore:
+    - "&7Кит: &f{kit}"
+    - ""
+    - "&eПКМ — снова в очередь"
+
+# Кнопки в меню предпросмотра кита (Kit Preview GUI)
+kit-preview:
+  book:
+    name: "&a&lРедактировать раскладку"
+    lore:
+      - "&7Настройте расположение предметов"
+      - "&7этого набора под себя."
+      - ""
+      - "&eНажмите, чтобы редактировать"
+  sherd:
+    name: "&d&lШаблоны брони"
+    lore:
+      - "&7Косметические отделки (Trims)"
+      - "&7на броню набора."
+      - ""
+      - "&eНажмите, чтобы выбрать"
+  celebration:
+    name: "&6&lПразднование"
+    lore:
+      - "&7Эффект на месте убийства"
+      - "&7для этого набора."
+      - ""
+      - "&eНажмите, чтобы выбрать"
+  back:
+    name: "&e&lНазад"
+    lore:
+      - "&7К выбору наборов"
+  close:
+    name: "&c&lЗакрыть"
+    lore:
+      - "&7Закрыть меню"
+
+# Кнопки редактора раскладки (сундук 3 ряда; предметы кита — во временном нижнем инвентаре игрока)
+kit-editor:
+  save:
+    name: "&a&lСохранить раскладку"
+    lore:
+      - "&7Сохранить текущее расположение"
+      - "&7предметов набора."
+      - ""
+      - "&eF &7— предмет во вторую руку"
+  reset:
+    name: "&e&lСбросить раскладку"
+    lore:
+      - "&7Вернуть предметы к"
+      - "&7значениям набора по умолчанию."
+  cancel:
+    name: "&c&lОтмена"
+    lore:
+      - "&7Отменить изменения и"
+      - "&7вернуться к предпросмотру."
+
+# Меню «Настройки» (кнопка в дуэльном хотбаре)
+settings:
+  title: "&8Настройки дуэлей"
+  bossbar:
+    name: "&fБоссбар во время дуэли"
+    lore:
+      - "&7Показ полосы босса с информацией"
+      - "&7о противнике и ките."
+  scoreboard:
+    name: "&fСкорборд во время дуэли"
+    lore:
+      - "&7Боковая панель с HP и пингом."
+  close:
+    name: "&c&lЗакрыть"
+    lore:
+      - "&7Закрыть меню"
+
+# Шаблоны брони (Trims). Открывается «черепком» в предпросмотре.
+# Доступно только группе/праву ниже (monaprime).
+trims:
+  enabled: true
+  permission: monaduels.trims
+  group: monaprime
+  menu-title: "&8Шаблоны брони"
+  # Списки доступных паттернов/материалов (ключи Minecraft). Пусто = все.
+  patterns: []
+  materials: []
+
+# Празднования (Kill Effects). Выбираются в предпросмотре кита (пер-кит) кнопкой «Празднование».
+# Доступ к ВЫБОРУ празднований гейтится глобально (см. секцию celebrations ниже).
+# victory_burst — бесплатный эффект по умолчанию для всех.
+kill-effects:
+  default: victory_burst
+  effects:
+    victory_burst:
+      type: victory_burst
+      display-name: "Празднование победы"
+      icon: SPLASH_POTION
+    fireworks:
+      type: firework
+      display-name: "Взрыв фейерверков"
+      icon: FIREWORK_ROCKET
+      count: 3
+      shape: BALL_LARGE
+      colors: [RED, YELLOW, WHITE]
+      fade-colors: [ORANGE]
+      flicker: true
+      trail: true
+    lightning:
+      type: lightning
+      display-name: "Удар молнии"
+      icon: LIGHTNING_ROD
+      count: 1
+      sound: ENTITY_LIGHTNING_BOLT_THUNDER
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    level_up:
+      type: sound-burst
+      display-name: "Звук нового уровня"
+      icon: EXPERIENCE_BOTTLE
+      particle: HAPPY_VILLAGER
+      count: 30
+      sound: ENTITY_PLAYER_LEVELUP
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    xp_fountain:
+      type: xp-fountain
+      display-name: "Фонтан опыта"
+      icon: EXPERIENCE_BOTTLE
+      count: 12
+      sound: ENTITY_EXPERIENCE_ORB_PICKUP
+      sound-volume: 1.0
+      sound-pitch: 0.8
+    flame_burst:
+      type: particle
+      display-name: "Партиклы огня"
+      icon: BLAZE_POWDER
+      particle: FLAME
+      count: 80
+      spread: 0.6
+      speed: 0.08
+      sound: ENTITY_BLAZE_SHOOT
+
+# Гейт доступа к выбору Празднований (аналогично trims). Только monaprime.
+celebrations:
+  enabled: true
+  permission: monaduels.celebrations
+  group: monaprime
+
+# Debug logging
+debug: false
